@@ -163,6 +163,8 @@ st.dataframe(
 if week == 1:
     st.info("No previous week poll data available for week 1.")
 
+current_display = current.copy()
+current_display["actual_rank"] = current_display["actual_rank"].astype(str)
 # --- Raw data expander ---
 with st.expander("Show raw data for this week"):
     st.dataframe(current, use_container_width=True)

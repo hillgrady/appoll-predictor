@@ -155,7 +155,7 @@ def style_result(val):
     return ""
 
 st.dataframe(
-    display.style.applymap(style_result, subset=["Result"]),
+    display.style.map(style_result, subset=["Result"]),
     use_container_width=True
 )
 

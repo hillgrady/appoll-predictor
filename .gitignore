@@ -1,2 +1,8 @@
 venv/
 .ipynb_checkpoints/
+__pycache__/
+.DS_Store
+.Rhistory
+CLAUDE.md
+pipeline/cache/
+R Files/

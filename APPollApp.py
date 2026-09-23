@@ -13,8 +13,8 @@ st.set_page_config(page_title="CFB Poll Predictor", page_icon="🏈", layout="wi
 # In[18]:
 
 
-DATA_PATH = "CFBPollDataFinal.csv"
-MODEL_PATH = "CFBLightGBM.txt"
+DATA_PATH = "data/CFBPollDataFinal.csv"
+MODEL_PATH = "model/CFBLightGBM.txt"
 
 DROP_COLS = ["total_wins_before", "total_losses_before", "team", "rank", "poll_point_diff"]
 EXCLUDE_FROM_FEATURES = ["next_week_points", "year", "week"] + DROP_COLS
@@ -55,7 +55,7 @@ with col2:
         w for w in df[df["year"] == year]["week"].unique()
         if 3 <= w <= 14
     )
-    week = st.selectbox("Week", available_weeks)
+    week = st.selectbox("Week", available_weeks, index=len(available_weeks) - 1)
 
 # --- Filter to selected week ---
 current = df[(df["year"] == year) & (df["week"] == week)].copy()
@@ -78,6 +78,9 @@ current["model_rank"] = (
     .astype(int)
 )
 
+# Is next week's poll out yet? (NA = this is the live, not-yet-released week)
+poll_out = current["next_week_points"].notna().any()
+
 # Actual next week rank
 current["actual_rank"] = (
     current["next_week_points"]
@@ -89,7 +92,7 @@ current["actual_rank"] = current["actual_rank"].where(
     current["next_week_points"] > 0
 )
 
-current["actual_rank"] = current["actual_rank"].fillna("Unranked")
+current["actual_rank"] = current["actual_rank"].fillna("Unranked" if poll_out else "TBD")
 
 # --- Build display table ---
 display = current[[
@@ -135,14 +138,18 @@ display["Prev Rank"] = display["Prev Rank"].astype(str).replace("<NA>", "NR")
 # --- Metrics ---
 st.subheader(f"Week {week}, {year}")
 
-m1, m2 = st.columns(2)
-m1.metric("Correctly Ranked Teams", int((current["model_rank"] == current["actual_rank"]).sum()))
-rank_diff = (
-    current["model_rank"]
-    - pd.to_numeric(current["actual_rank"], errors="coerce")
-).abs().mean()
+if poll_out:
+    m1, m2 = st.columns(2)
+    m1.metric("Correctly Ranked Teams", int((current["model_rank"] == current["actual_rank"]).sum()))
+    # Average miss for the teams actually in next week's Top 25 (teams ranked
+    # 26+ with a handful of votes are left out; their order is mostly noise)
+    actual_num = pd.to_numeric(current["actual_rank"], errors="coerce")
+    top25 = actual_num <= 25
+    rank_diff = (current["model_rank"][top25] - actual_num[top25]).abs().mean()
 
-m2.metric("Avg Rank Difference", f"{rank_diff:.1f}")
+    m2.metric("Avg Rank Difference (Top 25)", f"{rank_diff:.1f}")
+else:
+    st.info(f"The Week {week + 1} AP poll isn't out yet. This is the model's prediction for it.")
 
 st.divider()
 

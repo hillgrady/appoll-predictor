@@ -7,6 +7,7 @@
 import streamlit as st
 import pandas as pd
 import lightgbm as lgb
+import os
 st.set_page_config(page_title="CFB Poll Predictor", page_icon="🏈", layout="wide")
 
 
@@ -21,20 +22,26 @@ EXCLUDE_FROM_FEATURES = ["next_week_points", "year", "week"] + DROP_COLS
 CATS = ["conference", "opponent_conference", "result", "bias", "opponent"]
 
 # --- Loaders ---
+# Cached, but keyed on each file's last-modified time: when a push brings a new
+# CSV or model, the time changes and the app reloads it automatically.
+def file_version(path):
+    stat = os.stat(path)
+    return (stat.st_mtime, stat.st_size)
+
 @st.cache_data
-def load_data():
+def load_data(version):
     return pd.read_csv(DATA_PATH)
 
 @st.cache_resource
-def load_model():
+def load_model(version):
     return lgb.Booster(model_file=MODEL_PATH)
 
 
 # In[19]:
 
 
-df = load_data()
-model = load_model()
+df = load_data(file_version(DATA_PATH))
+model = load_model(file_version(MODEL_PATH))
 
 FEATURE_COLS = [col for col in df.columns if col not in EXCLUDE_FROM_FEATURES]
 

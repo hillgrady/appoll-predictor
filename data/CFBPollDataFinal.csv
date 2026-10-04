@@ -22712,3 +22712,141 @@
 "Western Kentucky",2026,4,"Conference USA",0,NA,"W",52,7,45,"Mercyhurst","NEC",0,2,0,0,NA,0,0,0,3,1,3,1
 "Wisconsin",2026,4,"Big Ten",0,NA,"W",24,20,4,"Penn State","Big Ten",3,0,850,102,NA,0,0,2,1,3,1,3
 "Wyoming",2026,4,"Mountain West",0,NA,"W",27,10,17,"Hawai'i","Mountain West",1,2,0,0,NA,0,0,1,2,2,2,1
+"Texas",2026,5,"SEC",1737,1,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,4,1,4,0,4,0,4
+"Georgia",2026,5,"SEC",1646,2,"W",38,14,24,"Vanderbilt","SEC",3,1,0,NA,NA,4,1,4,0,5,0,5
+"Notre Dame",2026,5,"FBS Independents",1581,3,"W",37,26,11,"North Carolina","ACC",2,1,0,NA,NA,4,1,4,0,5,0,5
+"Miami (FL)",2026,5,"ACC",1501,4,"W",41,13,28,"Clemson","ACC",3,1,0,NA,NA,3,1,4,0,5,0,5
+"Ohio State",2026,5,"Big Ten",1465,5,"W",31,14,17,"Iowa","Big Ten",4,0,856,NA,NA,5,0,3,1,4,1,3
+"Indiana",2026,5,"Big Ten",1408,6,"W",47,15,32,"Rutgers","Big Ten",1,3,0,NA,NA,0,1,4,0,5,0,5
+"Alabama",2026,5,"SEC",1305,7,"W",56,23,33,"Mississippi State","SEC",4,0,715,NA,NA,5,1,4,0,5,0,5
+"Florida",2026,5,"SEC",1272,8,"L",17,45,-28,"Missouri","SEC",3,1,118,NA,NA,2,0,4,0,4,1,-1
+"Ole Miss",2026,5,"SEC",1089,9,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,3,1,3,1,-1
+"BYU",2026,5,"Big 12",1078,10,"W",17,10,7,"TCU","Big 12",2,2,0,NA,NA,0,1,3,0,4,0,4
+"LSU",2026,5,"SEC",1073,11,"W",63,14,49,"McNeese","Southland",0,0,0,NA,NA,4,0,3,1,4,1,2
+"Texas Tech",2026,5,"Big 12",1053,12,"W",29,7,22,"Colorado","Big 12",2,2,0,NA,NA,0,1,4,0,5,0,5
+"Utah",2026,5,"Big 12",903,13,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,1,4,0,4,0,4
+"Iowa",2026,5,"Big Ten",856,14,"L",14,31,-17,"Ohio State","Big Ten",3,1,1465,NA,NA,0,0,4,0,4,1,-1
+"Oregon",2026,5,"Big Ten",725,15,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,3,1,3,1,2
+"Mississippi State",2026,5,"SEC",715,16,"L",23,56,-33,"Alabama","SEC",4,0,1305,NA,NA,0,0,4,0,4,1,-1
+"Tennessee",2026,5,"SEC",663,17,"W",24,14,10,"Auburn","SEC",3,1,0,NA,NA,2,0,3,1,4,1,1
+"USC",2026,5,"Big Ten",410,18,"W",25,21,4,"Washington","Big Ten",3,1,0,NA,NA,2,0,4,1,5,1,1
+"Oklahoma State",2026,5,"Big 12",345,19,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,3,1,3,1,3
+"Houston",2026,5,"Big 12",278,20,"W",27,17,10,"UCF","Big 12",3,1,0,NA,NA,0,0,3,1,4,1,2
+"SMU",2026,5,"ACC",246,21,"W",25,16,9,"Boston College","ACC",2,2,0,NA,NA,0,0,3,1,4,1,2
+"Boise State",2026,5,"Pac-12",221,22,"W",37,18,19,"Utah State","Pac-12",1,3,0,NA,NA,0,0,3,1,4,1,4
+"UCLA",2026,5,"Big Ten",218,23,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,1,4,0,4,0,4
+"Kentucky",2026,5,"SEC",150,24,"W",35,34,1,"South Carolina","SEC",2,2,0,NA,NA,0,0,3,1,4,1,3
+"Missouri",2026,5,"SEC",118,25,"W",45,17,28,"Florida","SEC",4,0,1272,NA,NA,0,0,3,1,4,1,1
+"Wisconsin",2026,5,"Big Ten",102,26,"W",31,3,28,"Michigan State","Big Ten",2,2,0,NA,NA,0,0,3,1,4,1,4
+"Duke",2026,5,"ACC",101,27,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,1,4,0,4,0,4
+"Penn State",2026,5,"Big Ten",98,28,"L",13,34,-21,"Northwestern","Big Ten",2,1,1,NA,NA,0,0,3,1,3,2,-2
+"Wake Forest",2026,5,"ACC",88,29,"W",57,3,54,"Stanford","ACC",2,2,0,NA,NA,0,0,3,1,4,1,2
+"Virginia Tech",2026,5,"ACC",86,30,"L",33,35,-2,"Pittsburgh","ACC",4,0,52,NA,NA,0,0,4,0,4,1,-1
+"Michigan",2026,5,"Big Ten",54,31,"L",14,20,-6,"Minnesota","Big Ten",3,1,7,NA,NA,4,0,3,1,3,2,-2
+"Pittsburgh",2026,5,"ACC",52,32,"W",35,33,2,"Virginia Tech","ACC",4,0,86,NA,NA,0,1,4,0,5,0,5
+"Nebraska",2026,5,"Big Ten",36,33,"W",48,23,25,"Maryland","Big Ten",2,2,0,NA,NA,1,1,4,0,5,0,5
+"Louisville",2026,5,"ACC",25,34,"L",28,31,-3,"NC State","ACC",2,2,0,NA,NA,0,0,2,2,2,3,-2
+"Cincinnati",2026,5,"Big 12",20,35,"L",7,34,-27,"Arizona","Big 12",3,1,8,NA,NA,0,0,4,0,4,1,-1
+"James Madison",2026,5,"Sun Belt",10,36,"W",45,17,28,"Marshall","Sun Belt",3,1,0,NA,NA,0,1,4,0,5,0,5
+"Arizona",2026,5,"Big 12",8,37,"W",34,7,27,"Cincinnati","Big 12",4,0,20,NA,NA,0,0,3,1,4,1,3
+"Minnesota",2026,5,"Big Ten",7,38,"W",20,14,6,"Michigan","Big Ten",3,1,54,NA,NA,0,0,3,1,4,1,3
+"North Dakota State",2026,5,"Mountain West",6,39,"W",28,0,28,"Wyoming","Mountain West",2,2,0,NA,NA,0,1,4,0,5,0,5
+"Northwestern",2026,5,"Big Ten",1,40,"W",34,13,21,"Penn State","Big Ten",3,1,98,NA,NA,0,0,2,1,3,1,1
+"Air Force",2026,5,"Mountain West",0,NA,"W",14,9,5,"Navy","American Athletic",1,2,0,NA,NA,0,0,2,1,3,1,2
+"Akron",2026,5,"Mid-American",0,NA,"L",17,41,-24,"Central Michigan","Mid-American",2,2,0,NA,NA,0,0,1,3,1,4,-3
+"Appalachian State",2026,5,"Sun Belt",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,3,1,3,1,-1
+"Arizona State",2026,5,"Big 12",0,NA,"L",19,55,-36,"Baylor","Big 12",3,1,0,NA,NA,0,0,2,1,2,2,-1
+"Arkansas",2026,5,"SEC",0,NA,"L",7,34,-27,"Texas A&M","SEC",2,2,0,NA,NA,0,0,2,2,2,3,-1
+"Arkansas State",2026,5,"Sun Belt",0,NA,"L",20,23,-3,"Louisiana","Sun Belt",3,1,0,NA,NA,0,0,2,2,2,3,-1
+"Army",2026,5,"American Athletic",0,NA,"L",29,31,-2,"Louisiana Tech","Sun Belt",1,2,0,NA,NA,0,0,2,1,2,2,-1
+"Auburn",2026,5,"SEC",0,NA,"L",14,24,-10,"Tennessee","SEC",3,1,663,NA,NA,1,0,3,1,3,2,-1
+"Ball State",2026,5,"Mid-American",0,NA,"L",24,39,-15,"Toledo","Mid-American",3,1,0,NA,NA,0,0,1,3,1,4,-3
+"Baylor",2026,5,"Big 12",0,NA,"W",55,19,36,"Arizona State","Big 12",2,1,0,NA,NA,0,0,3,1,4,1,4
+"Boston College",2026,5,"ACC",0,NA,"L",16,25,-9,"SMU","ACC",3,1,246,NA,NA,0,0,2,2,2,3,-2
+"Bowling Green",2026,5,"Mid-American",0,NA,"W",24,20,4,"Miami (OH)","Mid-American",2,2,0,NA,NA,0,0,0,4,1,4,1
+"Buffalo",2026,5,"Mid-American",0,NA,"L",17,20,-3,"Western Michigan","Mid-American",2,2,0,NA,NA,0,0,2,2,2,3,-1
+"California",2026,5,"ACC",0,NA,"L",31,39,-8,"UNLV","Mountain West",2,2,0,NA,NA,0,0,2,2,2,3,-2
+"Central Michigan",2026,5,"Mid-American",0,NA,"W",41,17,24,"Akron","Mid-American",1,3,0,NA,NA,0,0,2,2,3,2,1
+"Charlotte",2026,5,"American Athletic",0,NA,"L",8,59,-51,"Memphis","American Athletic",3,1,0,NA,NA,0,0,0,4,0,5,-5
+"Clemson",2026,5,"ACC",0,NA,"L",13,41,-28,"Miami (FL)","ACC",4,0,1501,NA,NA,4,0,3,1,3,2,-1
+"Coastal Carolina",2026,5,"Sun Belt",0,NA,"L",24,31,-7,"Georgia Southern","Sun Belt",1,3,0,NA,NA,0,0,1,3,1,4,-3
+"Colorado",2026,5,"Big 12",0,NA,"L",7,29,-22,"Texas Tech","Big 12",4,0,1053,NA,NA,0,0,2,2,2,3,-3
+"Colorado State",2026,5,"Pac-12",0,NA,"L",26,56,-30,"Oregon State","Pac-12",2,2,0,NA,NA,0,0,2,2,2,3,-3
+"Delaware",2026,5,"Conference USA",0,NA,"L",14,30,-16,"Liberty","Conference USA",3,1,0,NA,NA,0,0,2,2,2,3,-2
+"East Carolina",2026,5,"American Athletic",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,2,2,2,2,2
+"Eastern Michigan",2026,5,"Mid-American",0,NA,"W",38,14,24,"Massachusetts","Mid-American",4,0,0,NA,NA,0,0,2,3,3,3,2
+"Florida Atlantic",2026,5,"American Athletic",0,NA,"W",66,10,56,"Texas Southern","SWAC",0,1,0,NA,NA,0,0,3,1,4,1,4
+"Florida International",2026,5,"Conference USA",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,2,2,2,2,1
+"Florida State",2026,5,"ACC",0,NA,"W",38,7,31,"Virginia","ACC",3,1,0,NA,NA,1,0,2,2,3,2,2
+"Fresno State",2026,5,"Pac-12",0,NA,"W",26,6,20,"Washington State","Pac-12",1,3,0,NA,NA,0,0,3,1,4,1,4
+"Georgia Southern",2026,5,"Sun Belt",0,NA,"W",31,24,7,"Coastal Carolina","Sun Belt",1,3,0,NA,NA,0,0,1,3,2,3,1
+"Georgia State",2026,5,"Sun Belt",0,NA,"W",42,10,32,"Old Dominion","Sun Belt",1,3,0,NA,NA,0,0,3,1,4,1,2
+"Georgia Tech",2026,5,"ACC",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,1,3,1,3,-1
+"Hawai'i",2026,5,"Mountain West",0,NA,"L",16,20,-4,"San Jose State","Mountain West",2,2,0,NA,NA,0,0,1,3,1,4,-2
+"Illinois",2026,5,"Big Ten",0,NA,"L",17,24,-7,"Purdue","Big Ten",1,3,0,NA,NA,0,0,2,2,2,3,-2
+"Iowa State",2026,5,"Big 12",0,NA,"W",45,42,3,"West Virginia","Big 12",3,1,0,NA,NA,0,0,2,2,3,2,1
+"Jacksonville State",2026,5,"Conference USA",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,3,2,3,2,2
+"Kansas",2026,5,"Big 12",0,NA,"W",55,0,55,"Middle Tennessee","Conference USA",2,2,0,NA,NA,0,0,1,2,2,2,1
+"Kansas State",2026,5,"Big 12",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,3,1,3,1,-1
+"Kennesaw State",2026,5,"Conference USA",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,1,3,1,3,-3
+"Kent State",2026,5,"Mid-American",0,NA,"L",10,13,-3,"Ohio","Mid-American",2,2,0,NA,NA,0,0,2,2,2,3,-1
+"Liberty",2026,5,"Conference USA",0,NA,"W",30,14,16,"Delaware","Conference USA",2,2,0,NA,NA,0,0,3,1,4,1,4
+"Louisiana",2026,5,"Sun Belt",0,NA,"W",23,20,3,"Arkansas State","Sun Belt",2,2,0,NA,NA,0,0,3,1,4,1,3
+"Louisiana Tech",2026,5,"Sun Belt",0,NA,"W",31,29,2,"Army","American Athletic",2,1,0,NA,NA,0,0,1,2,2,2,1
+"Marshall",2026,5,"Sun Belt",0,NA,"L",17,45,-28,"James Madison","Sun Belt",4,0,10,NA,NA,0,0,3,1,3,2,-1
+"Maryland",2026,5,"Big Ten",0,NA,"L",23,48,-25,"Nebraska","Big Ten",4,0,36,NA,NA,0,0,2,2,2,3,-3
+"Massachusetts",2026,5,"Mid-American",0,NA,"L",14,38,-24,"Eastern Michigan","Mid-American",2,3,0,NA,NA,0,0,4,0,4,1,-1
+"Memphis",2026,5,"American Athletic",0,NA,"W",59,8,51,"Charlotte","American Athletic",0,4,0,NA,NA,0,0,3,1,4,1,2
+"Miami (OH)",2026,5,"Mid-American",0,NA,"L",20,24,-4,"Bowling Green","Mid-American",0,4,0,NA,NA,0,0,2,2,2,3,-1
+"Michigan State",2026,5,"Big Ten",0,NA,"L",3,31,-28,"Wisconsin","Big Ten",3,1,102,NA,NA,0,0,2,2,2,3,-3
+"Middle Tennessee",2026,5,"Conference USA",0,NA,"L",0,55,-55,"Kansas","Big 12",1,2,0,NA,NA,0,0,2,2,2,3,-2
+"Missouri State",2026,5,"Conference USA",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,1,3,1,3,-2
+"NC State",2026,5,"ACC",0,NA,"W",31,28,3,"Louisville","ACC",2,2,25,NA,NA,0,0,2,2,3,2,2
+"Navy",2026,5,"American Athletic",0,NA,"L",9,14,-5,"Air Force","Mountain West",2,1,0,NA,NA,0,0,1,2,1,3,-3
+"Nevada",2026,5,"Mountain West",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,1,3,1,3,-3
+"New Mexico",2026,5,"Mountain West",0,NA,"W",61,7,54,"UTEP","Mountain West",1,3,0,NA,NA,0,0,3,1,4,1,2
+"New Mexico State",2026,5,"Conference USA",0,NA,"W",34,13,21,"Western Kentucky","Conference USA",1,3,0,NA,NA,0,0,1,3,2,3,1
+"North Carolina",2026,5,"ACC",0,NA,"L",26,37,-11,"Notre Dame","FBS Independents",4,0,1581,NA,NA,0,0,2,1,2,2,-2
+"North Texas",2026,5,"American Athletic",0,NA,"W",45,44,1,"Tulsa","American Athletic",3,1,0,NA,NA,0,0,2,2,3,2,2
+"Northern Illinois",2026,5,"Mountain West",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,0,4,0,4,-4
+"Ohio",2026,5,"Mid-American",0,NA,"W",13,10,3,"Kent State","Mid-American",2,2,0,NA,NA,0,0,2,2,3,2,2
+"Oklahoma",2026,5,"SEC",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,2,2,2,2,-1
+"Old Dominion",2026,5,"Sun Belt",0,NA,"L",10,42,-32,"Georgia State","Sun Belt",3,1,0,NA,NA,0,0,1,3,1,4,-4
+"Oregon State",2026,5,"Pac-12",0,NA,"W",56,26,30,"Colorado State","Pac-12",2,2,0,NA,NA,0,0,2,2,3,2,3
+"Purdue",2026,5,"Big Ten",0,NA,"W",24,17,7,"Illinois","Big Ten",2,2,0,NA,NA,0,0,1,3,2,3,1
+"Rice",2026,5,"American Athletic",0,NA,"L",14,16,-2,"UTSA","American Athletic",3,1,0,NA,NA,0,0,1,3,1,4,-4
+"Rutgers",2026,5,"Big Ten",0,NA,"L",15,47,-32,"Indiana","Big Ten",4,0,1408,NA,NA,0,0,1,3,1,4,-1
+"Sacramento State",2026,5,"Mid-American",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,1,4,1,4,-3
+"Sam Houston",2026,5,"Conference USA",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,1,3,1,3,-1
+"San Diego State",2026,5,"Pac-12",0,NA,"W",31,29,2,"Texas State","Pac-12",2,2,0,NA,NA,0,0,1,3,2,3,1
+"San Jose State",2026,5,"Mountain West",0,NA,"W",20,16,4,"Hawai'i","Mountain West",1,3,0,NA,NA,0,0,2,2,3,2,1
+"South Alabama",2026,5,"Sun Belt",0,NA,"W",52,35,17,"UL Monroe","Sun Belt",0,4,0,NA,NA,0,0,2,2,3,2,1
+"South Carolina",2026,5,"SEC",0,NA,"L",34,35,-1,"Kentucky","SEC",3,1,150,NA,NA,0,0,2,2,2,3,-3
+"South Florida",2026,5,"American Athletic",0,NA,"L",13,17,-4,"Temple","American Athletic",1,3,0,NA,NA,0,0,4,0,4,1,-1
+"Southern Miss",2026,5,"Sun Belt",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,1,3,1,3,-3
+"Stanford",2026,5,"ACC",0,NA,"L",3,57,-54,"Wake Forest","ACC",3,1,88,NA,NA,0,0,2,2,2,3,-1
+"Syracuse",2026,5,"ACC",0,NA,"W",42,41,1,"UConn","FBS Independents",2,2,0,NA,NA,0,0,1,2,2,2,1
+"TCU",2026,5,"Big 12",0,NA,"L",10,17,-7,"BYU","Big 12",3,0,1078,NA,NA,0,0,2,2,2,3,-2
+"Temple",2026,5,"American Athletic",0,NA,"W",17,13,4,"South Florida","American Athletic",4,0,0,NA,NA,0,0,1,3,2,3,1
+"Texas A&M",2026,5,"SEC",0,NA,"W",34,7,27,"Arkansas","SEC",2,2,0,NA,NA,3,0,2,2,3,2,1
+"Texas State",2026,5,"Pac-12",0,NA,"L",29,31,-2,"San Diego State","Pac-12",1,3,0,NA,NA,0,0,2,2,2,3,-1
+"Toledo",2026,5,"Mid-American",0,NA,"W",39,24,15,"Ball State","Mid-American",1,3,0,NA,NA,0,0,3,1,4,1,4
+"Troy",2026,5,"Sun Belt",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,2,2,2,2,-2
+"Tulane",2026,5,"American Athletic",0,NA,"BYE",NA,NA,NA,"BYE","BYE",NA,NA,0,NA,NA,0,0,2,2,2,2,1
+"Tulsa",2026,5,"American Athletic",0,NA,"L",44,45,-1,"North Texas","American Athletic",2,2,0,NA,NA,0,0,3,1,3,2,-2
+"UAB",2026,5,"American Athletic",0,NA,"W",33,14,19,"Samford","Southern",0,0,0,NA,NA,0,0,2,2,3,2,2
+"UCF",2026,5,"Big 12",0,NA,"L",17,27,-10,"Houston","Big 12",3,1,278,NA,NA,0,0,3,1,3,2,-1
+"UConn",2026,5,"FBS Independents",0,NA,"L",41,42,-1,"Syracuse","ACC",1,2,0,NA,NA,0,0,2,2,2,3,-2
+"UL Monroe",2026,5,"Sun Belt",0,NA,"L",35,52,-17,"South Alabama","Sun Belt",2,2,0,NA,NA,0,0,0,4,0,5,-5
+"UNLV",2026,5,"Mountain West",0,NA,"W",39,31,8,"California","ACC",2,2,0,NA,NA,0,0,2,2,3,2,2
+"UTEP",2026,5,"Mountain West",0,NA,"L",7,61,-54,"New Mexico","Mountain West",3,1,0,NA,NA,0,0,1,3,1,4,-3
+"UTSA",2026,5,"American Athletic",0,NA,"W",16,14,2,"Rice","American Athletic",1,3,0,NA,NA,0,0,3,1,4,1,2
+"Utah State",2026,5,"Pac-12",0,NA,"L",18,37,-19,"Boise State","Pac-12",3,1,221,NA,NA,0,0,1,3,1,4,-1
+"Vanderbilt",2026,5,"SEC",0,NA,"L",14,38,-24,"Georgia","SEC",4,0,1646,NA,NA,0,0,3,1,3,2,-2
+"Virginia",2026,5,"ACC",0,NA,"L",7,38,-31,"Florida State","ACC",2,2,0,NA,NA,0,0,3,1,3,2,-1
+"Washington",2026,5,"Big Ten",0,NA,"L",21,25,-4,"USC","Big Ten",4,1,410,NA,NA,0,0,3,1,3,2,-2
+"Washington State",2026,5,"Pac-12",0,NA,"L",6,26,-20,"Fresno State","Pac-12",3,1,0,NA,NA,0,0,1,3,1,4,-2
+"West Virginia",2026,5,"Big 12",0,NA,"L",42,45,-3,"Iowa State","Big 12",2,2,0,NA,NA,0,0,3,1,3,2,-2
+"Western Kentucky",2026,5,"Conference USA",0,NA,"L",13,34,-21,"New Mexico State","Conference USA",1,3,0,NA,NA,0,0,1,3,1,4,-1
+"Western Michigan",2026,5,"Mid-American",0,NA,"W",20,17,3,"Buffalo","Mid-American",2,2,0,NA,NA,0,0,2,2,3,2,1
+"Wyoming",2026,5,"Mountain West",0,NA,"L",0,28,-28,"North Dakota State","Mountain West",4,0,6,NA,NA,0,0,2,2,2,3,-1

@@ -128,6 +128,38 @@ section[data-testid="stSidebar"] * {{ color: {TEXT_PRIMARY}; }}
     margin-top: 0.35rem; overflow: hidden;
 }}
 .meter-fill {{ height: 100%; background: linear-gradient(90deg, {GARNET}, {GOLD}); }}
+
+@media (max-width: 640px) {{
+    .block-container {{ padding-top: 1rem; padding-left: 0.75rem; padding-right: 0.75rem; }}
+
+    .app-header {{ padding: 1rem 1.25rem; border-radius: 12px; }}
+    .app-header h1 {{ font-size: 1.25rem; line-height: 1.3; }}
+    .app-header .subtitle {{ font-size: 0.78rem; }}
+
+    .stat-row {{ gap: 0.6rem; }}
+    .stat-tile {{ min-width: 0; flex: 1 1 calc(50% - 0.3rem); padding: 0.75rem 0.9rem; }}
+    .stat-tile .label {{ font-size: 0.72rem; }}
+    .stat-tile .value {{ font-size: 1.4rem; }}
+
+    .team-card {{
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        padding: 0.7rem 0.85rem;
+    }}
+    .rank-badge {{ flex: 0 0 32px; height: 32px; font-size: 0.85rem; }}
+    .team-logo {{ width: 30px; height: 30px; flex: 0 0 30px; }}
+    .team-main {{ flex: 1 1 calc(100% - 78px); min-width: 0; }}
+    .team-name {{ font-size: 0.95rem; }}
+    .team-sub {{ font-size: 0.74rem; flex-wrap: wrap; }}
+
+    .badge-row {{ flex: 1 1 100%; order: 3; margin-top: 0.1rem; }}
+    .badge {{ font-size: 0.68rem; padding: 0.18rem 0.5rem; }}
+
+    .meter-wrap {{
+        flex: 1 1 100%; order: 4; text-align: left; margin-top: 0.1rem;
+    }}
+    .meter-track {{ max-width: 220px; }}
+}}
 </style>
 """
 

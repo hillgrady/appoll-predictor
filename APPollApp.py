@@ -5,7 +5,7 @@ import lightgbm as lgb
 import pandas as pd
 import streamlit as st
 
-from team_logos import get_logo_url, BLANK_LOGO, missing_teams
+from team_logos import get_logo_url, BLANK_LOGO
 
 st.set_page_config(page_title="CFB Poll Predictor", page_icon="🏈", layout="wide")
 
@@ -371,10 +371,3 @@ with st.expander("Show raw data for this week"):
     current_display = current.copy()
     current_display["actual_rank"] = current_display["actual_rank"].astype(str)
     st.dataframe(current_display, use_container_width=True)
-
-names_this_week = list(current["team"]) + list(current["opponent"])
-unmatched = missing_teams(names_this_week)
-if unmatched:
-    with st.expander(f"⚠️ {len(unmatched)} team name(s) missing a logo this week"):
-        st.write(unmatched)
-        st.caption("Add these to TEAM_ESPN_ID or TEAM_ALIASES in team_logos.py.")

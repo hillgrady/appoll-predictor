@@ -1,3 +1,4 @@
+import base64
 import html
 import os
 
@@ -8,7 +9,10 @@ import streamlit as st
 
 from team_logos import get_logo_url, BLANK_LOGO
 
-st.set_page_config(page_title="CFB Poll Predictor", page_icon="🏈", layout="wide")
+st.set_page_config(page_title="CFB Poll Predictor", page_icon="assets/sac_icon.png", layout="wide")
+
+with open("assets/sac_logo.svg", "rb") as _f:
+    SAC_LOGO_URI = "data:image/svg+xml;base64," + base64.b64encode(_f.read()).decode()
 
 DATA_PATH = "data/CFBPollDataFinal.csv"
 MODEL_PATH = "model/CFBLightGBM.txt"
@@ -71,6 +75,13 @@ section[data-testid="stSidebar"] * {{ color: {TEXT_PRIMARY}; }}
     margin-bottom: 1.25rem;
     border: 1px solid {BORDER};
 }}
+.app-header {{ display: flex; align-items: center; gap: 1.25rem; }}
+.app-header .logo-chip {{
+    flex: 0 0 auto; background: #2D2D2A; border-radius: 12px;
+    padding: 0.55rem 0.8rem; display: flex; align-items: center;
+    border: 1px solid rgba(255,255,255,0.08);
+}}
+.app-header .logo-chip img {{ height: 44px; width: auto; display: block; }}
 .app-header h1 {{ margin: 0; font-size: 1.8rem; color: #ffffff; }}
 .app-header .subtitle {{
     color: {GOLD}; font-weight: 600; margin-top: 0.3rem; font-size: 0.95rem;
@@ -142,6 +153,9 @@ section[data-testid="stSidebar"] * {{ color: {TEXT_PRIMARY}; }}
     .block-container {{ padding-top: 1rem; padding-left: 0.75rem; padding-right: 0.75rem; }}
 
     .app-header {{ padding: 1rem 1.25rem; border-radius: 12px; }}
+    .app-header {{ gap: 0.8rem; }}
+    .app-header .logo-chip {{ padding: 0.4rem 0.55rem; border-radius: 10px; }}
+    .app-header .logo-chip img {{ height: 28px; }}
     .app-header h1 {{ font-size: 1.25rem; line-height: 1.3; }}
     .app-header .subtitle {{ font-size: 0.78rem; }}
 
@@ -254,9 +268,12 @@ def team_card(row, max_predicted: float) -> str:
 
 
 st.markdown(
-    """<div class="app-header">
-        <h1>🏈 Sports Analytics Club at FSU</h1>
-        <div class="subtitle">AP Poll Predictor</div>
+    f"""<div class="app-header">
+        <div class="logo-chip"><img src="{SAC_LOGO_URI}" alt="SAC" /></div>
+        <div>
+            <h1>Sports Analytics Club at FSU</h1>
+            <div class="subtitle">AP Poll Predictor</div>
+        </div>
     </div>""",
     unsafe_allow_html=True,
 )

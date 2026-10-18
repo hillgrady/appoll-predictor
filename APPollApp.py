@@ -1,6 +1,7 @@
 import html
 import os
 
+import altair as alt
 import lightgbm as lgb
 import pandas as pd
 import streamlit as st
@@ -121,6 +122,14 @@ section[data-testid="stSidebar"] * {{ color: {TEXT_PRIMARY}; }}
 .badge.good {{ color: {GOOD}; border-color: {GOOD}; }}
 .badge.accent {{ color: {GOLD}; border-color: {GOLD}; }}
 
+.move {{
+    font-size: 0.72rem; font-weight: 700; padding: 0.22rem 0.55rem; border-radius: 999px;
+    border: 1px solid {BORDER}; white-space: nowrap; color: {TEXT_SECONDARY};
+}}
+.move.up {{ color: {GOOD}; border-color: {GOOD}; }}
+.move.down {{ color: {CRITICAL}; border-color: {CRITICAL}; }}
+.move.new {{ color: {GOLD}; border-color: {GOLD}; }}
+
 .meter-wrap {{ flex: 0 0 150px; text-align: right; }}
 .meter-value {{ font-weight: 600; color: {TEXT_PRIMARY}; font-size: 0.95rem; }}
 .meter-track {{
@@ -177,6 +186,18 @@ def rank_badge(label) -> str:
     return f'<span class="badge">{html.escape(str(label))}</span>'
 
 
+def movement_chip(prev_rank, model_rank) -> str:
+    """Arrow showing how far the model moves a team from last week's poll."""
+    if prev_rank == "NR":
+        return '<span class="move new" title="Not ranked last week">NEW</span>'
+    change = int(prev_rank) - int(model_rank)
+    if change > 0:
+        return f'<span class="move up" title="Model moves them up {change}">▲{change}</span>'
+    if change < 0:
+        return f'<span class="move down" title="Model moves them down {-change}">▼{-change}</span>'
+    return '<span class="move" title="Same as last week">–</span>'
+
+
 def team_card(row, max_predicted: float) -> str:
     team = str(row["Team"])
     logo = get_logo_url(team) or BLANK_LOGO
@@ -220,6 +241,7 @@ def team_card(row, max_predicted: float) -> str:
             <div class="team-sub">{result_html}&nbsp;&middot;&nbsp;{opp_html}</div>
         </div>
         <div class="badge-row">
+            {movement_chip(prev_rank, model_rank)}
             {rank_badge(prev_label)}
             {rank_badge(f"Model #{model_rank}")}
             <span class="{actual_badge_class}">{html.escape(actual_label)}</span>
@@ -330,44 +352,132 @@ if search:
 else:
     display_filtered = display
 
-st.markdown(f"#### Week {week}, {year}")
+tab_week, tab_season = st.tabs(["This week", "Season accuracy"])
 
-if poll_out:
-    correctly_ranked = int((current["model_rank"] == current["actual_rank"]).sum())
-    actual_num = pd.to_numeric(current["actual_rank"], errors="coerce")
-    top25 = actual_num <= 25
-    rank_diff = (current["model_rank"][top25] - actual_num[top25]).abs().mean()
+with tab_week:
+    st.markdown(f"#### Week {week}, {year}")
 
-    st.markdown(
-        f"""<div class="stat-row">
-            {stat_tile("Correctly ranked teams", str(correctly_ranked))}
-            {stat_tile("Avg rank difference (top 25)", f"{rank_diff:.1f}")}
-        </div>""",
-        unsafe_allow_html=True,
-    )
-else:
-    st.markdown(
-        f"""<div class="info-banner">
-            The Week {week + 1} AP poll isn't out yet. This is the model's prediction for it.
-        </div>""",
-        unsafe_allow_html=True,
-    )
+    if poll_out:
+        correctly_ranked = int((current["model_rank"] == current["actual_rank"]).sum())
+        actual_num = pd.to_numeric(current["actual_rank"], errors="coerce")
+        top25 = actual_num <= 25
+        rank_diff = (current["model_rank"][top25] - actual_num[top25]).abs().mean()
 
-if week == 1:
-    st.markdown(
-        '<div class="info-banner">No previous week poll data available for week 1.</div>',
-        unsafe_allow_html=True,
-    )
+        st.markdown(
+            f"""<div class="stat-row">
+                {stat_tile("Correctly ranked teams", str(correctly_ranked))}
+                {stat_tile("Avg rank difference (top 25)", f"{rank_diff:.1f}")}
+            </div>""",
+            unsafe_allow_html=True,
+        )
+    else:
+        st.markdown(
+            f"""<div class="info-banner">
+                The Week {week + 1} AP poll isn't out yet. This is the model's prediction for it.
+            </div>""",
+            unsafe_allow_html=True,
+        )
 
-max_predicted = display_filtered["Predicted Pts"].max() if not display_filtered.empty else 0
+    if week == 1:
+        st.markdown(
+            '<div class="info-banner">No previous week poll data available for week 1.</div>',
+            unsafe_allow_html=True,
+        )
 
-if display_filtered.empty:
-    st.info("No teams match that filter.")
-else:
-    cards_html = "".join(team_card(row, max_predicted) for _, row in display_filtered.iterrows())
-    st.markdown(cards_html, unsafe_allow_html=True)
+    max_predicted = display_filtered["Predicted Pts"].max() if not display_filtered.empty else 0
 
-with st.expander("Show raw data for this week"):
-    current_display = current.copy()
-    current_display["actual_rank"] = current_display["actual_rank"].astype(str)
-    st.dataframe(current_display, use_container_width=True)
+    if display_filtered.empty:
+        st.info("No teams match that filter.")
+    else:
+        cards_html = "".join(team_card(row, max_predicted) for _, row in display_filtered.iterrows())
+        st.markdown(cards_html, unsafe_allow_html=True)
+
+    with st.expander("Show raw data for this week"):
+        current_display = current.copy()
+        current_display["actual_rank"] = current_display["actual_rank"].astype(str)
+        st.dataframe(current_display, use_container_width=True)
+
+
+@st.cache_data
+def season_accuracy(_model, data_version, year):
+    """Week-by-week top-25 accuracy for the model vs a 'last week's poll' baseline."""
+    rows = []
+    season = df[(df["year"] == year) & df["week"].between(3, 14)]
+    for wk, g in season.groupby("week"):
+        if g["next_week_points"].isna().all():
+            continue
+        g = g.copy()
+        for col in CATS:
+            g[col] = g[col].astype("category")
+        pred = pd.Series(_model.predict(g[FEATURE_COLS]), index=g.index)
+        model_rank = pred.rank(method="min", ascending=False)
+        base_rank = g["poll_points"].rank(method="min", ascending=False)
+        actual = g["next_week_points"]
+        actual_rank = actual.rank(method="min", ascending=False).where(actual > 0)
+        top = actual_rank <= 25
+        rows.append({
+            "Week": int(wk),
+            "Model": (model_rank[top] - actual_rank[top]).abs().mean(),
+            "Last week's poll": (base_rank[top] - actual_rank[top]).abs().mean(),
+            "Model exact": int((model_rank[top] == actual_rank[top]).sum()),
+            "Baseline exact": int((base_rank[top] == actual_rank[top]).sum()),
+        })
+    return pd.DataFrame(rows)
+
+
+with tab_season:
+    acc = season_accuracy(model, file_version(DATA_PATH), year)
+    st.markdown(f"#### {year} season accuracy")
+    if acc.empty:
+        st.info("No weeks with a released poll yet this season.")
+    else:
+        m, b = acc["Model"].mean(), acc["Last week's poll"].mean()
+        better = int((acc["Model"] < acc["Last week's poll"]).sum())
+        st.markdown(
+            f"""<div class="stat-row">
+                {stat_tile("Model avg rank error", f"{m:.2f}")}
+                {stat_tile("Last week's poll avg error", f"{b:.2f}")}
+                {stat_tile("Weeks model beat baseline", f"{better} / {len(acc)}")}
+            </div>""",
+            unsafe_allow_html=True,
+        )
+        st.caption(
+            "Average rank error for teams in the actual top 25 (lower is better). "
+            "The baseline just assumes next week's poll matches this week's."
+        )
+        long = acc.melt("Week", ["Model", "Last week's poll"], var_name="Series", value_name="Avg rank error")
+        chart = (
+            alt.Chart(long)
+            .mark_line(point=alt.OverlayMarkDef(size=60), strokeWidth=2.5)
+            .encode(
+                x=alt.X("Week:O", title="Week", axis=alt.Axis(labelAngle=0)),
+                y=alt.Y("Avg rank error:Q", title="Avg rank error (top 25)", scale=alt.Scale(zero=True)),
+                color=alt.Color(
+                    "Series:N",
+                    scale=alt.Scale(domain=["Model", "Last week's poll"], range=[GOLD, TEXT_MUTED]),
+                    legend=alt.Legend(orient="top", title=None),
+                ),
+                strokeDash=alt.StrokeDash(
+                    "Series:N",
+                    scale=alt.Scale(domain=["Model", "Last week's poll"], range=[[1, 0], [5, 4]]),
+                    legend=None,
+                ),
+                tooltip=["Week", "Series", alt.Tooltip("Avg rank error:Q", format=".2f")],
+            )
+            .properties(height=320)
+            .configure(background="transparent")
+            .configure_axis(labelColor=TEXT_SECONDARY, titleColor=TEXT_SECONDARY,
+                            gridColor="rgba(255,255,255,0.08)", domainColor=BORDER)
+            .configure_legend(labelColor=TEXT_PRIMARY)
+            .configure_view(strokeWidth=0)
+        )
+        st.altair_chart(chart, use_container_width=True)
+
+        table = acc.rename(columns={
+            "Model": "Model avg error", "Last week's poll": "Baseline avg error",
+            "Model exact": "Model exact ranks", "Baseline exact": "Baseline exact ranks",
+        })
+        st.dataframe(
+            table.style.format({"Model avg error": "{:.2f}", "Baseline avg error": "{:.2f}"}),
+            use_container_width=True, hide_index=True,
+        )
